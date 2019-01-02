@@ -4,14 +4,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button[] buttons = new Button[20];
-
+    Calculator calculator = new Calculator();
+    TextView inputView, resultView;
+    String input = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        inputView = findViewById(R.id.input);
+        resultView = findViewById(R.id.result);
 
         buttons[0] = findViewById(R.id._0);
         buttons[1] = findViewById(R.id._1);
@@ -42,6 +48,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        switch(v.getId()){
+            case R.id._0:
+            case R.id._1:
+            case R.id._2:
+            case R.id._3:
+            case R.id._4:
+            case R.id._5:
+            case R.id._6:
+            case R.id._7:
+            case R.id._8:
+            case R.id._9:
+            case R.id.dot:
+                input += ((Button)v).getText().toString();
+                inputView.setText(((Button)v).getText().toString());
+                break;
+            case R.id.sign:
+                break;
+            case R.id.equals:
+                resultView.setText(calculator.result());
+                break;
+            case R.id.add:
+            case R.id.minus:
+            case R.id.divide:
+            case R.id.x:
+            case R.id.percent:
+                calculator.addInput(input);
+                input = "";
+                calculator.addTool(((Button)v).getText().toString());
+                inputView.setText(((Button)v).getText().toString());
+                break;
+            case R.id.bracket:
+                break;
+            case R.id.c:
+                input = "";
+                inputView.setText("0");
+                resultView.setText("0");
+                calculator.clear();
+                break;
+        }
     }
+
 }

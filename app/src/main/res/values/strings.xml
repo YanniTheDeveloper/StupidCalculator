@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Stupid Calculator</string>
-    <string name="_0">0</string>
     <string name="result">Result</string>
     <string name="b">b</string>
     <string name="c">C</string>
