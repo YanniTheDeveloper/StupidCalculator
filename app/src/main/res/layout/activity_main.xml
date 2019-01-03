@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/divider"
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_alignParentTop="true"
@@ -19,16 +20,19 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
-
-            android:background="@color/colorAccent"
-            android:text="@string/_0" />
+            android:textSize="26sp"
+            android:background="@color/background"
+            android:textColor="@color/text"
+            />
         <TextView
             android:padding="8dp"
             android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="@string/result" />
+            android:text="@string/result"
+            android:background="@color/background"
+            android:textColor="@color/text2"/>
     </LinearLayout>
 
     <LinearLayout
@@ -41,6 +45,7 @@
             android:id="@+id/menuBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Menu"/>
     </LinearLayout>
     <LinearLayout

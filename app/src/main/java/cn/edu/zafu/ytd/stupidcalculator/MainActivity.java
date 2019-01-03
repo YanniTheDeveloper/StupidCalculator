@@ -11,6 +11,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Calculator calculator = new Calculator();
     TextView inputView, resultView;
     String input = "0";
+    String formula = "";
+    boolean again = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +44,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttons[18] = findViewById(R.id.bracket);
         buttons[19] = findViewById(R.id.c);
 
-        for(int i=0; i<20; i++){
+        for (int i = 0; i < 20; i++) {
             buttons[i].setOnClickListener(this);
         }
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id._0:if(input.equals("0")) break;
+        switch (v.getId()) {
+            case R.id._0:
+                if (input.equals("0")) break;
             case R.id._1:
             case R.id._2:
             case R.id._3:
@@ -58,47 +62,74 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id._6:
             case R.id._7:
             case R.id._8:
-            case R.id._9:if(input.equals("0")) {
-                input = "";
-                inputView.setText(eraseLast(inputView.getText().toString()));
-            }
+            case R.id._9:
+                if (input.equals("0")) {
+                    input = "";
+                }
 
             case R.id.dot:
-                input += ((Button)v).getText().toString();
-                inputView.setText(inputView.getText()+((Button)v).getText().toString());
+                if (again) {
+                    formula = "";
+                    calculator.clear();
+                    again = false;
+                }
+                input += ((Button) v).getText().toString();
+                formula += ((Button) v).getText().toString();
+                inputView.setText(formula);
                 break;
             case R.id.sign:
                 break;
             case R.id.equals:
-                resultView.setText(calculator.result());
+                if (!formula.isEmpty()) {
+                    if (!input.isEmpty()) calculator.addInput(input);
+                    else {
+                        calculator.removeTool();
+                        formula = eraseLast(formula);
+                    }
+                    inputView.setText(formula);
+                    resultView.setText(calculator.result());
+                    input = "";
+                    again = true;
+                }
                 break;
             case R.id.add:
             case R.id.minus:
             case R.id.divide:
             case R.id.x:
             case R.id.percent:
-                calculator.addInput(input);
-                input = "";
-                calculator.addTool(((Button)v).getText().toString());
-                inputView.setText(inputView.getText()+((Button)v).getText().toString());
+                if (!formula.isEmpty()) {
+                    if (!input.isEmpty()) {
+                        calculator.addInput(input);
+                        input = "";
+                    } else {
+                        if (!again) {
+                            calculator.removeTool();
+                            formula = eraseLast(formula);
+
+                        }
+                    }
+                    calculator.addTool(((Button) v).getText().toString());
+                    formula += ((Button) v).getText().toString();
+                    inputView.setText(formula);
+                    again = false;
+                }
                 break;
             case R.id.bracket:
                 break;
             case R.id.c:
-                input = "";
-                inputView.setText("0");
-                resultView.setText("0");
+                input = "0";
+                formula = "";
+                inputView.setText("");
+                resultView.setText("");
                 calculator.clear();
                 break;
         }
     }
+
     public String eraseLast(String str) {
-        if (str.charAt(str.length()-1)=='x'){
-            str = str.replace(str.substring(str.length()-1), "");
-            return str;
-        } else{
-            return str;
-        }
+        if (str.length() != 0)
+            str = str.substring(0, str.length() - 1);
+        return str;
     }
 
 }
