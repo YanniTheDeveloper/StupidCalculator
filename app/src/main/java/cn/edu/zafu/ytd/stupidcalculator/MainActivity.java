@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button[] buttons = new Button[20];
     Calculator calculator = new Calculator();
     TextView inputView, resultView;
-    String input = "";
+    String input = "0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttons[18] = findViewById(R.id.bracket);
         buttons[19] = findViewById(R.id.c);
 
-        for(int i=0; i<=20; i++){
+        for(int i=0; i<20; i++){
             buttons[i].setOnClickListener(this);
         }
     }
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id._0:
+            case R.id._0:if(input.equals("0")) break;
             case R.id._1:
             case R.id._2:
             case R.id._3:
@@ -58,10 +58,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id._6:
             case R.id._7:
             case R.id._8:
-            case R.id._9:
+            case R.id._9:if(input.equals("0")) {
+                input = "";
+                inputView.setText(eraseLast(inputView.getText().toString()));
+            }
+
             case R.id.dot:
                 input += ((Button)v).getText().toString();
-                inputView.setText(((Button)v).getText().toString());
+                inputView.setText(inputView.getText()+((Button)v).getText().toString());
                 break;
             case R.id.sign:
                 break;
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculator.addInput(input);
                 input = "";
                 calculator.addTool(((Button)v).getText().toString());
-                inputView.setText(((Button)v).getText().toString());
+                inputView.setText(inputView.getText()+((Button)v).getText().toString());
                 break;
             case R.id.bracket:
                 break;
@@ -86,6 +90,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resultView.setText("0");
                 calculator.clear();
                 break;
+        }
+    }
+    public String eraseLast(String str) {
+        if (str.charAt(str.length()-1)=='x'){
+            str = str.replace(str.substring(str.length()-1), "");
+            return str;
+        } else{
+            return str;
         }
     }
 

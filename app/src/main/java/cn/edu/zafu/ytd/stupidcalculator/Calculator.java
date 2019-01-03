@@ -27,8 +27,9 @@ public class Calculator {
     public String result(){
         double myResult = 0.0;
         int i;
-        for (i=0; i<=input.size()-1;i++){
-            if(i==0 || tool.get(i-1).equals("+"))
+        myResult += Double.parseDouble(input.get(0));
+        for (i=1; i<input.size();i++){
+            if(tool.get(i-1).equals("+"))
             myResult += Double.parseDouble(input.get(i));
             else if(tool.get(i-1).equals("*"))
             myResult *= Double.parseDouble(input.get(i));
