@@ -45,7 +45,6 @@ public class Calculator {
         Log.e(TAG, "result: toolSize "+tool.size(), null );
         Log.e(TAG, "result: inputSize "+input.size(), null );
         for (i=0; i<input.size();i++){
-            Log.e(TAG, "result: i "+i, null );
             if(tool.get(i).equals("+"))
             myResult += Double.parseDouble(input.get(i));
             else if(tool.get(i).equals("x"))
@@ -54,6 +53,8 @@ public class Calculator {
             myResult /= Double.parseDouble(input.get(i));
             else if(tool.get(i).equals("-"))
             myResult -= Double.parseDouble(input.get(i));
+            else if(tool.get(i).equals("%"))
+                myResult /= 100;
         }
         return ""+myResult;
     }

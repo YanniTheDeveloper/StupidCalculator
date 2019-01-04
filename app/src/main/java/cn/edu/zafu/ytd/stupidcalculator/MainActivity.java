@@ -76,6 +76,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 boolean noDot = true;
                 if(v.getId()==R.id.dot) {
+                    if(input.isEmpty()){
+                        input = "0";
+                        formula += "0";
+                        break;
+                    }
                     for(int i =0; i<input.length();i++){
                         if(input.charAt(i)=='.') {
                             noDot = false;
@@ -83,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                     }
+
                 if(noDot){    input += ((Button) v).getText().toString();
                 formula += ((Button) v).getText().toString();
                 inputView.setText(formula);}
@@ -113,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (!input.isEmpty()) {
                         calculator.addInput(input);
                         input = "";
+                        resultView.setText(calculator.result());
                     } else {
                         if (!again) {
                             calculator.removeTool();
