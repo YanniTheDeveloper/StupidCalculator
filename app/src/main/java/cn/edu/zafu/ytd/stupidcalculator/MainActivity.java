@@ -68,26 +68,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
             case R.id.dot:
+
                 if (again) {
                     formula = "";
                     calculator.clear();
                     again = false;
                 }
-                input += ((Button) v).getText().toString();
+                boolean noDot = true;
+                if(v.getId()==R.id.dot) {
+                    for(int i =0; i<input.length();i++){
+                        if(input.charAt(i)=='.') {
+                            noDot = false;
+                            break;
+                        }
+                    }
+                    }
+                if(noDot){    input += ((Button) v).getText().toString();
                 formula += ((Button) v).getText().toString();
-                inputView.setText(formula);
+                inputView.setText(formula);}
                 break;
             case R.id.sign:
                 break;
             case R.id.equals:
+                if(!again)
                 if (!formula.isEmpty()) {
                     if (!input.isEmpty()) calculator.addInput(input);
                     else {
                         calculator.removeTool();
                         formula = eraseLast(formula);
                     }
+                    formula = calculator.result();
                     inputView.setText(formula);
-                    resultView.setText(calculator.result());
+                    resultView.setText("");
                     input = "";
                     again = true;
                 }

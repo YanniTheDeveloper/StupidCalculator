@@ -67,7 +67,7 @@
                 android:id="@+id/c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/c" />
 
             <Button
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_7" />
 
             <Button
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_4" />
 
             <Button
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_1" />
 
             <Button
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/sign" />
         </LinearLayout>
 
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/bracket" />
 
             <Button
@@ -126,7 +126,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_8" />
 
             <Button
@@ -136,7 +136,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_5" />
 
             <Button
@@ -146,7 +146,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_2" />
 
             <Button
@@ -156,7 +156,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_0" />
         </LinearLayout>
 
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/percentage" />
 
             <Button
@@ -183,7 +183,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_9" />
 
             <Button
@@ -193,7 +193,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_6" />
 
             <Button
@@ -203,7 +203,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/_3" />
 
             <Button
@@ -213,7 +213,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/dot" />
         </LinearLayout>
 
@@ -230,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/divide" />
 
             <Button
@@ -240,7 +240,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/x" />
 
             <Button
@@ -250,7 +250,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/minus" />
 
             <Button
@@ -260,7 +260,7 @@
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/text3"
                 android:text="@string/add" />
 
             <Button
